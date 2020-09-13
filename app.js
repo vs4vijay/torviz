@@ -16,6 +16,7 @@ const log = (...args) => {
 };
 
 const main = (torrentFile) => {
+  // TODO: This will move to TorrentClient class
   log(`[+] Starting ${CONFIG.name}`);
 
   const torrent = new Torrent(torrentFile);

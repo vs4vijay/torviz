@@ -1,7 +1,7 @@
 {
   "name": "torviz",
   "version": "0.0.1",
-  "description": "A torrent client for fun and learning",
+  "description": "A BitTorrent client for fun and profit",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

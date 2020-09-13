@@ -1,5 +1,21 @@
 # torviz
-A torrent client for fun and learning
+A BitTorrent client for fun and profit
+
+---
+
+## Installation
+
+```
+npm install torviz
+```
+
+---
+
+## Running
+
+```console
+torviz <torrent_file>
+```
 
 ---
 
@@ -26,17 +42,24 @@ A torrent client for fun and learning
         - downloaded=
         - left=
         - event=
-  - **UDP Actions**:
-    - 0: connect
-    - 1: announce
-    - 2: scrape
-    - 3: error
-  - **UDP Events**:
-    - 0: none
-    - 1: completed
-    - 2: started
-    - 3: stopped 
-
+  - **UDP Protocol**:
+    - Connect: Request (connection_id, action, transaction_id) -> Response (action, transaction_id, connection_id)
+    - Announce: Request (..., info_hash, peer_id, event, ...) -> Response (..., leechers, seeders) 
+    - Scrape: Request (connection_id, action, transaction_id, n * info_hash) -> Response (action, transaction_id, ...)
+    - UDP Actions:
+      - 0: connect
+      - 1: announce
+      - 2: scrape
+      - 3: error
+    - UDP Events:
+      - 0: none
+      - 1: completed
+      - 2: started
+      - 3: stopped 
+    - Error Response:
+      - action
+      - transaction_id
+      - error_string
 
 ---
 
@@ -55,6 +78,7 @@ A torrent client for fun and learning
 - [ ] Add TUI based on ncurses using 'blessed'
 - [ ] Support DHT
 - [ ] Implement PeX (Peer Exchange)
+- [ ] Publish to npm
 
 ---
 
